@@ -1,0 +1,111 @@
+body{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #57C5B6;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   overflow: hidden;
+}
+.clock{
+    min-width: 300px;
+    min-height: 300px;
+    /* margin: auto; */
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+.number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+.number1{
+    transform: rotate(30deg);
+}
+.number2{
+    transform: rotate(60deg);
+}
+.number3{
+    transform: rotate(90deg);
+}
+.number4{
+    transform: rotate(120deg);
+}
+.number5{
+    transform: rotate(150deg);
+}
+.number6{
+    transform: rotate(180deg);
+}
+.number7{
+    transform: rotate(210deg);
+}
+.number8{
+    transform: rotate(240deg);
+}
+.number9{
+    transform: rotate(270deg);
+}
+.number10{
+    transform: rotate(300deg);
+}
+.number11{
+    transform: rotate(330deg);
+}
+.clock::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+.hand{
+   
+    position: absolute;
+    width: 10px;
+    height: 50%;
+    background-color: blue;
+    border: 1px solid white;
+    bottom: 50%;
+    left: 50%;
+    /* this left 50% does not shifts the hand element to 50% but its left edge to 50% (its left edge is exactly at the center (or 50% from left)) */
+    transform: translateX(-50%);
+    /* this transtateX shifts the hand element 50% of its width to the left (-ve) */
+
+    /* hence now the center of the body of the hand element is at center (or 50% to the left) */
+    /* transform:rotate(calc(var(--rotation)*1deg)); */
+    transform-origin:bottom;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    z-index: 10;
+}
+.second{
+    height: 45%;
+    width: 2px;
+    background-color: red;
+    /* z-index: 22; */
+}
+.minute{
+    height: 40%;
+    width: 7px;
+    background-color: black;
+    /* z-index: 21; */
+}
+.hour{
+    height: 35%;
+    width: 10px;
+    background-color: black;
+    /* z-index: 20; */
+
+}
+
